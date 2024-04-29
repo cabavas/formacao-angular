@@ -11,10 +11,12 @@ export class PokemonService {
   private pokeData: PokemonData | any;
   private http!: HttpClient;
 
-  constructor() {}
+  constructor() {
+  }
 
   getPokemon(pokemonName: string): Observable<PokemonData> {
-    this.pokeData = this.http.get<PokemonData>(`${this.baseUrl}${pokemonName}`);
+    // this.pokeData = this.http.get<PokemonData>(`${this.baseUrl}${pokemonName}`);
+    this.pokeData = this.http.get('http://pokeapi.co/api/v2/pokemon/pikachu');
 
     return this.pokeData;
   }
